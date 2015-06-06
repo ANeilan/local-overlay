@@ -68,6 +68,6 @@ src_install() {
 	dobin bin/${PN}
 	dodoc README.md
 #	doman ${PN}.1
-	newbashcomp ${PN}.bash-completion ${PN}
+#	newbashcomp ${PN}.bash-completion ${PN}
 	python_fix_shebang "${ED}"
 }
