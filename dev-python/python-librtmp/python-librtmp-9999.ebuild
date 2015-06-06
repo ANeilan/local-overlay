@@ -24,6 +24,6 @@ fi
 
 LICENSE="BSD"
 SLOT="0"
-DEPEND="dev-python/cffi[${PYTHON_USEDEP}]
+DEPEND=">=dev-python/cffi-1.0[${PYTHON_USEDEP}]
 	dev-python/singledispatch[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
