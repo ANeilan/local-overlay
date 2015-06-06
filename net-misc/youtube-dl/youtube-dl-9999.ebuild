@@ -11,7 +11,7 @@ inherit bash-completion-r1 distutils-r1 eutils git-2
 DESCRIPTION="Download videos from YouTube.com (and more sites...)"
 HOMEPAGE="http://rg3.github.com/youtube-dl/"
 #SRC_URI="http://youtube-dl.org/downloads/${PV}/${P}.tar.gz"
-EGIT_SRC_URI="git://github.com/rg3/youtube-dl.git"
+EGIT_REPO_URI="git://github.com/rg3/youtube-dl.git"
 
 LICENSE="public-domain"
 SLOT="0"
