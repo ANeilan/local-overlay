@@ -66,7 +66,7 @@ src_test() {
 src_install() {
 	python_domodule youtube_dl
 	dobin bin/${PN}
-	dodoc README.txt
+	dodoc README.md
 	doman ${PN}.1
 	newbashcomp ${PN}.bash-completion ${PN}
 	python_fix_shebang "${ED}"
