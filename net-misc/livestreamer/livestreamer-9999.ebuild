@@ -23,6 +23,8 @@ fi
 
 LICENSE="BSD"
 SLOT="0"
+IUSE="librtmp"
 DEPEND="dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/singledispatch[${PYTHON_USEDEP}]"
+	dev-python/singledispatch[${PYTHON_USEDEP}]
+	librtmp? ( dev-python/python-librtmp[${PYTHON_USEDEP}] )"
 RDEPEND="${DEPEND}"
