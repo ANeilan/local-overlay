@@ -16,5 +16,5 @@ src_install() {
 	insinto /usr/share/rtmpsnoop
 	doins "${S}/rtmpSnoop.py"
 	doins -r lib
-	dobin files/rtmpsnoop
+	dobin rtmpsnoop
 }
