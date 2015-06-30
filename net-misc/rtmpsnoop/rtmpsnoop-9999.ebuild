@@ -14,7 +14,7 @@ DEPEND=">=net-analyzer/scapy-2.3.1
 RDEPEND="${DEPEND}"
 src_prepare() {
 	echo "#!/bin/bash" >> rtmpsnoop
-	echo "exec python2 /usr/share/rtmpsnoop/rtmpSnoop.py \$@" >> rtmpsnoop
+	echo "exec python2 /usr/share/rtmpsnoop/rtmpSnoop.py $@" >> rtmpsnoop
 }
 src_install() {
 	insinto /usr/share/rtmpsnoop
