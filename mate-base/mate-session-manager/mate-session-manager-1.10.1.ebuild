@@ -63,7 +63,8 @@ src_prepare() {
 
 	# Fix race condition in idle monitor, GNOME bug applies to MATE too,
 	# see https://bugzilla.gnome.org/show_bug.cgi?id=627903
-	epatch "${FILESDIR}"/${PN}-1.2.0-idle-transition.patch
+	# patch added upstream  now
+	#epatch "${FILESDIR}"/${PN}-1.2.0-idle-transition.patch
 
 	eautoreconf
 	gnome2_src_prepare
