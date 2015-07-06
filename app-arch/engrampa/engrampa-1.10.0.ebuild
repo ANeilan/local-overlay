@@ -24,7 +24,7 @@ IUSE="caja"
 # GLib-GIO-ERROR **: Settings schema 'org.mate.caja.preferences' is not installed
 #
 # ... thus we depend on Caja regardless of the Caja USE flag. Patches welcome.
-RDEPEND=">=x11-libs/gtk+-3:3
+RDEPEND=">=x11-libs/gtk+-2:2
 	>=dev-libs/glib-2.25.5:2
 	>=dev-libs/json-glib-0.14:0
 	x11-libs/gdk-pixbuf:2
@@ -53,7 +53,7 @@ src_configure() {
 		--disable-run-in-place \
 		--disable-packagekit \
 		--disable-deprecations \
-		--with-gtk=3.0 \
+		--with-gtk=2.0 \
 		$(use_enable caja caja-actions)
 }
 
