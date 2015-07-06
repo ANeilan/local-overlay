@@ -60,8 +60,6 @@ src_prepare() {
 	# Disable python check.
 	sed -e '/AM_PATH_PYTHON/d' -i configure.ac || die
 
-	epatch "${FILESDIR}/${P}-update_marco_wm_name.patch"
-
 	epatch_user
 
 	eautoreconf
