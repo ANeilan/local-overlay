@@ -9,10 +9,12 @@ GCONF_DEBUG="no"
 inherit gnome2 versionator
 
 MATE_BRANCH="$(get_version_component_range 1-2)"
-
-SRC_URI="http://pub.mate-desktop.org/releases/${MATE_BRANCH}/${PN}-gtk3.16-${PV}.tar.xz"
+GTK_VERSION="gtk3.16"
+SRC_URI="http://pub.mate-desktop.org/releases/${MATE_BRANCH}/${PN}-${GTK_VERSION}-${PV}.tar.xz"
 DESCRIPTION="A set of MATE themes, with sets for users with limited or low vision"
 HOMEPAGE="http://mate-desktop.org"
+S=${WORKDIR}/${PN}-${GTK_VERSION}-${PV}
+
 
 LICENSE="LGPL-2.1"
 SLOT="0"
