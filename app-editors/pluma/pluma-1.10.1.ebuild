@@ -36,7 +36,7 @@ RDEPEND="app-text/rarian:0
 	>=mate-base/mate-desktop-1.10:0
 	x11-libs/cairo:0
 	x11-libs/gdk-pixbuf:2
-	>=x11-libs/gtk+-3:3
+	>=x11-libs/gtk+-2:2
 	>=x11-libs/gtksourceview-3:3.0
 	x11-libs/libICE:0
 	x11-libs/libX11:0
@@ -50,7 +50,7 @@ RDEPEND="app-text/rarian:0
 	python? (
 		${PYTHON_DEPS}
 		>=dev-python/pygobject-2.15.4:2[${PYTHON_USEDEP}]
-		>=dev-python/pygtk-3:3[${PYTHON_USEDEP}]
+		>=dev-python/pygtk-2.24.0-r4:2[${PYTHON_USEDEP}]
 		>=dev-python/pygtksourceview-3:3
 	)
 	!!app-editors/mate-text-editor"
@@ -61,7 +61,7 @@ DEPEND="${RDEPEND}
 	app-text/yelp-tools:0
 	>=dev-util/intltool-0.40:*
 	>=sys-devel/libtool-2.2.6:2
-	>=mate-base/mate-common-1.8:0
+	>=mate-base/mate-common-1.10:0
 	>=sys-devel/gettext-0.17:*
 	virtual/pkgconfig:*"
 
@@ -74,7 +74,7 @@ src_configure() {
 		--disable-updater \
 		$(use_enable python) \
 		$(use_enable spell) \
-		--with-gtk=3.0
+		--with-gtk=2.0
 }
 
 DOCS="AUTHORS ChangeLog NEWS README"
