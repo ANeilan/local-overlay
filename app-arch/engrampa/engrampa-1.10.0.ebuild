@@ -19,7 +19,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE="caja"
+IUSE="caja gtk3"
 
 # GLib-GIO-ERROR **: Settings schema 'org.mate.caja.preferences' is not installed
 #
@@ -53,6 +53,9 @@ src_configure() {
 		--disable-run-in-place \
 		--disable-packagekit \
 		--disable-deprecations \
+if use gtk3
+		--with-gtk=3.0 \
+else
 		--with-gtk=2.0 \
 		$(use_enable caja caja-actions)
 }
