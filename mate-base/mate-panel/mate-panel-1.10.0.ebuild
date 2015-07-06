@@ -38,7 +38,7 @@ RDEPEND="
 	x11-libs/libICE:0
 	x11-libs/libSM:0
 	x11-libs/libX11:0
-	>=x11-libs/libwnck-2.30:1[introspection?]
+	>=x11-libs/libwnck-3:3[introspection?]
 	>=x11-libs/pango-1.15.4:0[introspection?]
 	>=x11-libs/gtk+-3:3[introspection?]
 	x11-libs/libXau:0
