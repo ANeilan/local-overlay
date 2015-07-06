@@ -29,7 +29,7 @@ RDEPEND=">=dev-libs/dbus-glib-0.74:0
 	>=gnome-base/dconf-0.13.4:0
 	x11-libs/cairo:0
 	x11-libs/gdk-pixbuf:2
-	>=x11-libs/gtk+-2.24:2
+	>=x11-libs/gtk+-3:3
 	x11-libs/libX11:0
 	x11-libs/libXi:0
 	x11-libs/libXext:0
@@ -78,7 +78,8 @@ src_configure() {
 		$(use_enable pulseaudio pulse) \
 		$(use_enable !pulseaudio gstreamer) \
 		$(use_enable smartcard smartcard-support) \
-		$(use_with X x)
+		$(use_with X x) \
+		--with-gtk=3.0
 }
 
 DOCS="AUTHORS NEWS ChangeLog"
