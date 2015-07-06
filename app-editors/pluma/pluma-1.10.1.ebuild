@@ -21,7 +21,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 x86"
 
-IUSE="python spell"
+IUSE="python spell gtk3"
 
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
@@ -36,7 +36,8 @@ RDEPEND="app-text/rarian:0
 	>=mate-base/mate-desktop-1.10:0
 	x11-libs/cairo:0
 	x11-libs/gdk-pixbuf:2
-	>=x11-libs/gtk+-2:2
+	!gtk3? ( >=x11-libs/gtk+-2:2 )
+	gtk3?  ( >=x11-libs/gtk+-3.16.4:3 )
 	>=x11-libs/gtksourceview-3:3.0
 	x11-libs/libICE:0
 	x11-libs/libX11:0
@@ -70,11 +71,18 @@ pkg_setup() {
 }
 
 src_configure() {
+	local gtk_version
+
+	if use gtk3 ; then
+		gtk_version="${gtk_version} --with-gtk=3.0"
+	else
+		gtk_version="${gtk_version} --with-gtk=2.0"
+	fi
 	gnome2_src_configure \
 		--disable-updater \
 		$(use_enable python) \
 		$(use_enable spell) \
-		--with-gtk=2.0
+		${gtk_version}
 }
 
 DOCS="AUTHORS ChangeLog NEWS README"

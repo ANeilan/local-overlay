@@ -43,8 +43,6 @@ RDEPEND="
 		>=app-arch/engrampa-1.10:0
 		>=app-editors/pluma-1.10:0
 		>=app-text/atril-1.10:0
-		#mate-calc was replaced with galculator
-		#>=mate-extra/mate-calc-1.8:0
 		>=sci-calculators/galculator-2.1.3:0
 		>=mate-extra/mate-power-manager-1.10:0
 		>=mate-extra/mate-screensaver-1.10:0

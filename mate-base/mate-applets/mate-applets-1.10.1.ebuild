@@ -19,7 +19,7 @@ LICENSE="GPL-2 FDL-1.1 LGPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE="X ipv6 networkmanager policykit +upower"
+IUSE="X ipv6 networkmanager policykit +upower gtk3"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="${PYTHON_DEPS}
@@ -38,7 +38,8 @@ RDEPEND="${PYTHON_DEPS}
 	sys-power/cpupower
 	upower? ( || ( >=sys-power/upower-0.9.23 >=sys-power/upower-pm-utils-0.9.23 ) )
 	x11-libs/gdk-pixbuf:2
-	>=x11-libs/gtk+-2.24.28-r1:2
+	!gtk3? ( >=x11-libs/gtk+-2.24.28-r1:2 )
+	gtk3?  ( >=x11-libs/gtk+-3.16.4:3 )
 	>=x11-libs/libnotify-0.7:0
 	x11-libs/libX11:0
 	>=x11-libs/libxklavier-4:0
@@ -66,10 +67,17 @@ src_prepare() {
 }
 
 src_configure() {
+	local gtk_version
+
+	if use gtk3 ; then
+		gtk_version="${gtk_version} --with-gtk=3.0"
+	else
+		gtk_version="${gtk_version} --with-gtk=2.0"
+	fi
 	gnome2_src_configure \
 		--libexecdir=/usr/libexec/mate-applets \
 		--without-hal \
-		--with-gtk=2.0 \
+		${gtk_version} \
 		$(use_enable ipv6) \
 		$(use_enable networkmanager) \
 		$(use_enable policykit polkit) \

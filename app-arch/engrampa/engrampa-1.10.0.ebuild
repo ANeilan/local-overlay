@@ -19,12 +19,14 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE="caja"
+IUSE="caja gtk3"
 
 # GLib-GIO-ERROR **: Settings schema 'org.mate.caja.preferences' is not installed
 #
 # ... thus we depend on Caja regardless of the Caja USE flag. Patches welcome.
-RDEPEND=">=x11-libs/gtk+-2:2
+RDEPEND="
+	!gtk3? ( >=x11-libs/gtk+-2:2 )
+	gtk3? ( >=x11-libs/gtk+-3.16.4:3 )
 	>=dev-libs/glib-2.25.5:2
 	>=dev-libs/json-glib-0.14:0
 	x11-libs/gdk-pixbuf:2
@@ -49,11 +51,18 @@ src_prepare() {
 }
 
 src_configure() {
+	local gtk_version
+
+	if use gtk3 ; then
+		gtk_version="${gtk_version} --with-gtk=3.0"
+	else
+		gtk_version="${gtk_version} --with-gtk=2.0"
+	fi
 	gnome2_src_configure \
 		--disable-run-in-place \
 		--disable-packagekit \
 		--disable-deprecations \
-		--with-gtk=2.0 \
+		${gtk_version} \
 		$(use_enable caja caja-actions)
 }
 

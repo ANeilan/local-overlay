@@ -19,11 +19,13 @@ LICENSE="LGPL-2"
 SLOT="0"
 KEYWORDS="amd64 x86"
 
-IUSE="X test"
+IUSE="X test gtk3"
 
 RDEPEND=">=dev-libs/glib-2.18:2
 	x11-libs/cairo:0
 	>=x11-libs/gdk-pixbuf-2.18:2
+	!gtk3? ( >=x11-libs/gtk+-2.24.28-r1:2 )
+	gtk3?  ( >=x11-libs/gtk+-3.16.4:3 )
 	>=x11-libs/gtk+-2.24.28-r1:2
 	x11-libs/libX11:0
 	>=x11-libs/libxklavier-5.0:0
@@ -36,8 +38,15 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig:*"
 
 src_configure() {
+	local gtk_version
+
+	if use gtk3 ; then
+		gtk_version="${gtk_version} --with-gtk=3.0"
+	else
+		gtk_version="${gtk_version} --with-gtk=2.0"
+	fi
 	gnome2_src_configure \
-		--with-gtk=2.0 \
+		${gtk_version} \
 		$(use_enable test tests) \
 		$(use_with X x)
 }

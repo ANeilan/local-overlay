@@ -19,7 +19,7 @@ LICENSE="GPL-2 LGPL-2 FDL-1.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE="+mate +introspection +unique xmp"
+IUSE="+mate +introspection +unique xmp gtk3"
 
 RDEPEND="dev-libs/atk:0
 	>=dev-libs/glib-2.28:2
@@ -28,7 +28,8 @@ RDEPEND="dev-libs/atk:0
 	>=gnome-base/gvfs-1.10.1:0[udisks]
 	>=mate-base/mate-desktop-1.10:0
 	>=media-libs/libexif-0.5.12:0
-	>=x11-libs/gtk+-2.24.28-r1:2[introspection?]
+	!gtk3? ( >=x11-libs/gtk+-2.24.28-r1:2[introspection?] )
+	gtk3?  ( >=x11-libs/gtk+-3.16.4:3[introspection?] )
 	x11-libs/cairo:0
 	x11-libs/gdk-pixbuf:2
 	x11-libs/libICE:0
@@ -67,11 +68,18 @@ src_prepare() {
 }
 
 src_configure() {
+	local gtk_version
+
+	if use gtk3 ; then
+		gtk_version="${gtk_version} --with-gtk=3.0"
+	else
+		gtk_version="${gtk_version} --with-gtk=2.0"
+	fi
 	gnome2_src_configure \
 		--enable-unique \
 		--disable-packagekit \
 		--disable-update-mimedb \
-		--with-gtk=2.0 \
+		${gtk_version} \
 		$(use_enable introspection) \
 		$(use_enable unique) \
 		$(use_enable xmp)

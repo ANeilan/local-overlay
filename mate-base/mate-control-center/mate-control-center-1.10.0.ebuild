@@ -18,6 +18,7 @@ HOMEPAGE="http://mate-desktop.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE="gtk3"
 
 RDEPEND="app-text/rarian:0
 	dev-libs/atk:0
@@ -42,7 +43,8 @@ RDEPEND="app-text/rarian:0
 	x11-apps/xmodmap:0
 	x11-libs/cairo:0
 	x11-libs/gdk-pixbuf:2
-	>=x11-libs/gtk+-2.24.28-r1:2
+	!gtk3? ( >=x11-libs/gtk+-2.24.28-r1:2 )
+	gtk3?  ( >=x11-libs/gtk+-3.16.4:3 )
 	x11-libs/libX11:0
 	x11-libs/libXScrnSaver:0
 	x11-libs/libXcursor:0
@@ -77,10 +79,17 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig:*"
 
 src_configure() {
+	local gtk_version
+
+	if use gtk3 ; then
+		gtk_version="${gtk_version} --with-gtk=3.0"
+	else
+		gtk_version="${gtk_version} --with-gtk=2.0"
+	fi
 	gnome2_src_configure \
 		--disable-update-mimedb \
 		--disable-appindicator \
-		--with-gtk=2.0
+		${gtk_version}
 }
 
 src_compile() {
