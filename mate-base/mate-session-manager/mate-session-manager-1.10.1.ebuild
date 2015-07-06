@@ -30,7 +30,7 @@ RDEPEND=">=dev-libs/dbus-glib-0.76
 	sys-apps/dbus
 	x11-apps/xdpyinfo
 	x11-libs/gdk-pixbuf:2
-	>=x11-libs/gtk+-3:3
+	>=x11-libs/gtk+-2.24.28-r1:2
 	x11-libs/libICE
 	x11-libs/libSM
 	x11-libs/libX11
@@ -74,7 +74,7 @@ src_configure() {
 	gnome2_src_configure \
 		--docdir="${EPREFIX}/usr/share/doc/${PF}" \
 		--with-default-wm=mate-wm \
-		--with-gtk=3.0 \
+		--with-gtk=2.0 \
 		$(use_enable ipv6) \
 		$(use_with systemd) \
 		$(use_enable upower)

@@ -29,7 +29,7 @@ RDEPEND="${PYTHON_DEPS}
 	>=dev-libs/libunique-1:1
 	x11-libs/cairo:0
 	>=x11-libs/gdk-pixbuf-2.4:2
-	>=x11-libs/gtk+-3:3
+	>=x11-libs/gtk+-2.24.28-r1:2
 	x11-libs/libX11:0
 	>=x11-libs/libXrandr-1.2:0
 	virtual/libintl:0
@@ -50,7 +50,7 @@ src_configure() {
 		--enable-mate-about \
 		--enable-mate-conf-import \
 		--disable-desktop-docs \
-		--with-gtk=3.0 \
+		--with-gtk=2.0 \
 		$(use_with X x) \
 		$(use_enable startup-notification)
 }

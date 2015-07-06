@@ -40,7 +40,7 @@ RDEPEND="
 	x11-libs/libX11:0
 	>=x11-libs/libwnck-3:3[introspection?]
 	>=x11-libs/pango-1.15.4:0[introspection?]
-	>=x11-libs/gtk+-3:3[introspection?]
+	>=x11-libs/gtk+-2.24.28-r1:2[introspection?]
 	x11-libs/libXau:0
 	>=x11-libs/libXrandr-1.2:0
 	virtual/libintl:0
@@ -71,7 +71,7 @@ src_configure() {
 	gnome2_src_configure \
 		--libexecdir=/usr/libexec/mate-applets \
 		--disable-deprecation-flags \
-		--with-gtk=3.0 \
+		--with-gtk=2.0 \
 		$(use_enable networkmanager network-manager) \
 		$(use_enable introspection) \
 		$(use_with X x)

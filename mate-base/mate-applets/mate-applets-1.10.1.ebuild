@@ -38,7 +38,7 @@ RDEPEND="${PYTHON_DEPS}
 	sys-power/cpupower
 	upower? ( || ( >=sys-power/upower-0.9.23 >=sys-power/upower-pm-utils-0.9.23 ) )
 	x11-libs/gdk-pixbuf:2
-	>=x11-libs/gtk+-3:3
+	>=x11-libs/gtk+-2.24.28-r1:2
 	>=x11-libs/libnotify-0.7:0
 	x11-libs/libX11:0
 	>=x11-libs/libxklavier-4:0
@@ -69,7 +69,7 @@ src_configure() {
 	gnome2_src_configure \
 		--libexecdir=/usr/libexec/mate-applets \
 		--without-hal \
-		--with-gtk=3.0 \
+		--with-gtk=2.0 \
 		$(use_enable ipv6) \
 		$(use_enable networkmanager) \
 		$(use_enable policykit polkit) \

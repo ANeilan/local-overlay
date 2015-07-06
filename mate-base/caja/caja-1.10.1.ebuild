@@ -28,7 +28,7 @@ RDEPEND="dev-libs/atk:0
 	>=gnome-base/gvfs-1.10.1:0[udisks]
 	>=mate-base/mate-desktop-1.10:0
 	>=media-libs/libexif-0.5.12:0
-	>=x11-libs/gtk+-3:3[introspection?]
+	>=x11-libs/gtk+-2.24.28-r1:2[introspection?]
 	x11-libs/cairo:0
 	x11-libs/gdk-pixbuf:2
 	x11-libs/libICE:0
@@ -71,7 +71,7 @@ src_configure() {
 		--enable-unique \
 		--disable-packagekit \
 		--disable-update-mimedb \
-		--with-gtk=3.0 \
+		--with-gtk=2.0 \
 		$(use_enable introspection) \
 		$(use_enable unique) \
 		$(use_enable xmp)

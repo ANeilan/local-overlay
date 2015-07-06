@@ -42,7 +42,7 @@ RDEPEND="app-text/rarian:0
 	x11-apps/xmodmap:0
 	x11-libs/cairo:0
 	x11-libs/gdk-pixbuf:2
-	>=x11-libs/gtk+-3:3
+	>=x11-libs/gtk+-2.24.28-r1:2
 	x11-libs/libX11:0
 	x11-libs/libXScrnSaver:0
 	x11-libs/libXcursor:0
@@ -65,7 +65,7 @@ DEPEND="${RDEPEND}
 	app-text/yelp-tools:0
 	dev-util/desktop-file-utils:0
 	>=dev-util/intltool-0.37.1:*
-	>=mate-base/mate-common-1.6:0
+	>=mate-base/mate-common-1.10:0
 	sys-devel/gettext:*
 	x11-proto/kbproto:0
 	x11-proto/randrproto:0
@@ -80,7 +80,7 @@ src_configure() {
 	gnome2_src_configure \
 		--disable-update-mimedb \
 		--disable-appindicator \
-		--with-gtk=3.0
+		--with-gtk=2.0
 }
 
 src_compile() {

@@ -30,7 +30,7 @@ RDEPEND="
 	x11-libs/cairo:0
 	>=x11-libs/pango-1.2:0[X]
 	x11-libs/gdk-pixbuf:2
-	>=x11-libs/gtk+-3:3
+	>=x11-libs/gtk+-2.24.28-r1:2
 	x11-libs/libICE:0
 	x11-libs/libSM:0
 	x11-libs/libX11:0
@@ -63,7 +63,7 @@ src_configure() {
 		--enable-shape \
 		--enable-sm \
 		--enable-xsync \
-		--with-gtk=3.0 \
+		--with-gtk=2.0 \
 		$(use_enable startup-notification) \
 		$(use_enable xinerama)
 }
