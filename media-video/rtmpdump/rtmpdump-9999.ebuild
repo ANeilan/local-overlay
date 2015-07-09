@@ -39,7 +39,7 @@ src_prepare() {
 		-e 's:OPT:OPTS:' \
 		-e 's:CFLAGS=.*:& $(OPT):' librtmp/Makefile \
 		|| die "failed to fix Makefile"
-	patch -p0 -i ${filesdir}/Patch.diff
+	epatch "${FILESDIR}/ksv-patchset.patch"
 	multilib_copy_sources
 }
 
