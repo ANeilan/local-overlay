@@ -23,9 +23,26 @@ fi
 
 LICENSE="BSD"
 SLOT="0"
-IUSE="rtmp"
-DEPEND="dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/singledispatch[${PYTHON_USEDEP}]
+IUSE="rtmp doc test"
+RDEPEND="dev-python/pycrypto[${PYTHON_USEDEP}]
+	>=dev-python/requests-1.0[${PYTHON_USEDEP}]
 	virtual/python-futures[${PYTHON_USEDEP}]
+	virtual/python-singledispatch[${PYTHON_USEDEP}]
+	>media-video/rtmpdump-2.4"
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
+	test? ( ${RDEPEND} )
+	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	rtmp? ( dev-python/python-librtmp[${PYTHON_USEDEP}] )"
-RDEPEND="${DEPEND}"
+
+python_compile_all() {
+	use doc && emake -C docs html
+}
+
+python_test() {
+	esetup.py test
+}
+
+python_install_all() {
+	use doc && local HTML_DOCS=( docs/_build/html/. )
+	distutils-r1_python_install_all
+}
