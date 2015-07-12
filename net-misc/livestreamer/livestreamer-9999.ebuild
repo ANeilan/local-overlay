@@ -23,9 +23,9 @@ fi
 
 LICENSE="BSD"
 SLOT="0"
-IUSE="librtmp"
+IUSE="rtmp"
 DEPEND="dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/singledispatch[${PYTHON_USEDEP}]
 	virtual/python-futures[${PYTHON_USEDEP}]
-	librtmp? ( dev-python/python-librtmp[${PYTHON_USEDEP}] )"
+	rtmp? ( dev-python/python-librtmp[${PYTHON_USEDEP}] )"
 RDEPEND="${DEPEND}"
