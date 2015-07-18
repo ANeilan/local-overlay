@@ -24,7 +24,7 @@ IUSE="startup-notification test xinerama"
 RDEPEND="
 	dev-libs/atk:0
 	>=dev-libs/glib-2.25.10:2
-	>=mate-extra/mate-dialogs-1.8:0
+	>=gnome-extra/zenity-3.16.3
 	media-libs/libcanberra:0[gtk]
 	>=gnome-base/libgtop-2:2=
 	x11-libs/cairo:0
