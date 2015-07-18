@@ -27,7 +27,8 @@ DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35:*
 	sys-devel/gettext:*
 	>=x11-misc/icon-naming-utils-0.8.7:0
-	virtual/pkgconfig:*"
+	virtual/pkgconfig:*
+	!!mate-base/mate-themes:0"
 
 RESTRICT="binchecks strip"
 
