@@ -26,7 +26,7 @@ RDEPEND="dev-libs/atk:0
 	>=dev-libs/libxml2-2.4.7:2
 	gnome-base/dconf:0
 	>=gnome-base/gvfs-1.10.1:0[udisks]
-	>=mate-base/mate-desktop-1.8:0
+	>=mate-base/mate-desktop-1.10:0
 	>=media-libs/libexif-0.5.12:0
 	>=x11-libs/gtk+-2.24:2[introspection?]
 	x11-libs/cairo:0
