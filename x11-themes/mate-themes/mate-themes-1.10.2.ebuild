@@ -7,16 +7,17 @@ EAPI="5"
 GCONF_DEBUG="no"
 
 inherit gnome2 versionator
-
+GTK_VERSION=gtk3.16
 MATE_BRANCH="$(get_version_component_range 1-2)"
-SLOT="3.16"
-SRC_URI="http://pub.mate-desktop.org/releases/${MATE_BRANCH}/${PN}-gtk${SLOT}-${PV}.tar.xz"
+SLOT="0"
+SRC_URI="http://pub.mate-desktop.org/releases/${MATE_BRANCH}/${PN}-${GTK_VERSION}-${PV}.tar.xz"
 DESCRIPTION="A set of MATE themes, with sets for users with limited or low vision"
 HOMEPAGE="http://mate-desktop.org"
 
 LICENSE="LGPL-2.1"
 KEYWORDS="amd64 x86"
 
+S=${WORKDIR}/${PN}-${GTK_VERSION}-${PV}
 RDEPEND=">=x11-libs/gdk-pixbuf-2:2
 	>=x11-libs/gtk+-2:2
 	>=x11-libs/gtk+-3.16:3
@@ -27,8 +28,7 @@ DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35:*
 	sys-devel/gettext:*
 	>=x11-misc/icon-naming-utils-0.8.7:0
-	virtual/pkgconfig:*
-	!!mate-base/mate-themes:0"
+	virtual/pkgconfig:*"
 
 RESTRICT="binchecks strip"
 
