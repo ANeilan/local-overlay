@@ -1,0 +1,10 @@
+--- libmateweather-1.10.0-original/python/Makefile.am	2015-07-18 13:19:01.507988213 -0400
++++ libmateweather-1.10.0/python/Makefile.am	2015-07-18 13:20:30.460981964 -0400
+@@ -1,4 +1,7 @@
+ if BUILD_PYTHON
++
++MKDIR_P=@mkdir_p@
++
+ AM_CPPFLAGS =			\
+ 	-I$(top_srcdir)		\
+ 	$(PYTHON_INCLUDES)	\
