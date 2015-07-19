@@ -14,7 +14,7 @@ HOMEPAGE="http://mate-desktop.org"
 
 LICENSE="LGPL-2 GPL-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 
 IUSE="alsa oss pulseaudio"
 
