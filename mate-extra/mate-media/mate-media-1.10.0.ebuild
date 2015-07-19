@@ -37,8 +37,7 @@ COMMON_DEPEND="app-text/rarian:0
 	>=dev-libs/libunique-1:1
 	x11-libs/cairo:0
 	x11-libs/pango:0
-	virtual/libintl:0
-	pulseaudio? ( >=media-sound/pulseaudio-0.9.16:0[glib] )"
+	virtual/libintl:0"
 
 # Specific gst plugins are used by the default audio encoding profiles
 RDEPEND="${COMMON_DEPEND}
@@ -71,10 +70,7 @@ DEPEND="${COMMON_DEPEND}
 	!!<mate-base/mate-applets-1.10:*"
 
 src_configure() {
-	gnome2_src_configure \
-		$(use_enable pulseaudio) \
-		$(use_enable !pulseaudio gstmix) \
-		$(use_enable !pulseaudio gst-mixer-applet)
+	gnome2_src_configure
 }
 
 DOCS="AUTHORS ChangeLog* NEWS README"
