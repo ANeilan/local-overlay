@@ -45,7 +45,7 @@ RDEPEND="
 		=app-arch/engrampa-${MATE_MV}*
 		=app-editors/pluma-${MATE_MV}*
 		=app-text/atril-${MATE_MV}*
-		=mate-extra/mate-calc-${MATE_MV}*
+		sci-calculators/galculator
 		=mate-extra/mate-power-manager-${MATE_MV}*
 		=mate-extra/mate-screensaver-${MATE_MV}*
 		=mate-extra/mate-system-monitor-${MATE_MV}*
