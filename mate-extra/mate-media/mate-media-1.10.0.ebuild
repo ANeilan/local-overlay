@@ -83,8 +83,4 @@ pkg_postinst() {
 	ewarn "USE flags on media-plugins/gst-plugins-meta"
 	ewarn
 
-	if use pulseaudio ; then
-		ewarn "You have enabled pulseaudio support, gstmixer will not be built"
-		ewarn "If you do not use pulseaudio, you do not want this"
-	fi
 }
