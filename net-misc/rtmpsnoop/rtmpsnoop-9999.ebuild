@@ -9,8 +9,8 @@ HOMEPAGE="https://github.com/andreafabrizi/rtmpSnoop"
 EGIT_REPO_URI="git://github.com/andreafabrizi/rtmpSnoop.git"
 SLOT="0"
 LICENSE="LGPL-3"
-DEPEND="net-analyzer/scapy[${PYTHON_USEDEP}]
-net-analyzer/tcpdump[${PYTHON_USEDEP}]"
+DEPEND="net-analyzer/scapy
+	net-analyzer/tcpdump"
 RDEPEND="${DEPEND}"
 src_prepare() {
 	echo '#!/bin/bash' >> rtmpsnoop
