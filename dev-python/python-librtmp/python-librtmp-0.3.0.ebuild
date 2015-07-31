@@ -10,7 +10,7 @@ inherit distutils-r1
 
 DESCRIPTION="python-librtmp is a Python interface to librtmp. It uses cffi to interface with the C library librtmp."
 HOMEPAGE="https://github.com/chrippa/python-librtmp"
-
+KEYWORDS="x86 amd64"
 if [[ ${PV} == "9999" ]] ; then
     EGIT_REPO_URI="git://github.com/chrippa/${PN}.git"
     inherit git-2
