@@ -5,11 +5,11 @@ EAPI=5
 inherit eutils git-r3
 DESCRIPTION="Download and decrypt HTTP Live Streaming videos."
 HOMEPAGE="https://github.com/osklil/hls-fetch/"
+SLOT="0"
+IUSE="parallel"
 EGIT_REPO_URI="
 	parallel? ( git://github.com/bioinfo-geek/hls-fetch )
 	!parallel? ( git://github.com/osklil/hls-fetch )"
-SLOT="0"
-IUSE="parallel"
 DEPEND="
 	dev-lang/perl
 	dev-libs/openssl
