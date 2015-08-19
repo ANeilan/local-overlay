@@ -12,7 +12,7 @@ DEPEND="
   dev-libs/openssl
   dev-perl/HTML-Parser
   dev-perl/libwww-perl
-  dev-perl/json
+  dev-perl/JSON
   dev-perl/URI"
 LICENSE="GPL-3"
 KEYWORDS="x86 amd64"
