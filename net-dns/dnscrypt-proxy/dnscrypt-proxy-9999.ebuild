@@ -28,6 +28,10 @@ pkg_setup() {
 	enewuser dnscrypt -1 -1 /var/empty dnscrypt
 }
 
+src_prepare() {
+	einfo "running autogen.sh"
+	./autogen.sh
+}
 src_configure() {
 	econf \
 		$(use_enable plugins) \
