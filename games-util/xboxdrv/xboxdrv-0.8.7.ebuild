@@ -46,7 +46,7 @@ src_compile() {
 src_install() {
 	dobin xboxdrv
 	doman doc/xboxdrv.1
-	dodoc AUTHORS NEWS PROTOCOL README TODO
+	dodoc AUTHORS NEWS PROTOCOL TODO #README
 
 	newinitd "${FILESDIR}"/xboxdrv.initd xboxdrv
 	newconfd "${FILESDIR}"/xboxdrv.confd xboxdrv
