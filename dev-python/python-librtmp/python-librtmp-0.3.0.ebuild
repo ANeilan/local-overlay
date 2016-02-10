@@ -21,6 +21,7 @@ fi
 LICENSE="BSD"
 SLOT="0"
 DEPEND=">=dev-python/cffi-1.0[${PYTHON_USEDEP}]
-	dev-python/singledispatch[${PYTHON_USEDEP}]
+	#dev-python/singledispatch[${PYTHON_USEDEP}]
+	virtual/python-singledispatch[${PYTHON_USEDEP}]
 	media-video/rtmpdump"
 RDEPEND="${DEPEND}"
