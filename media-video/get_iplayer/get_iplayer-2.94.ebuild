@@ -18,6 +18,7 @@ RDEPEND="media-video/mplayer
 		media-sound/lame
 		media-video/flvstreamer
 		dev-perl/libwww-perl
+		media-video/atomicparsley-wez
 		"
 DEPEND=""
 
