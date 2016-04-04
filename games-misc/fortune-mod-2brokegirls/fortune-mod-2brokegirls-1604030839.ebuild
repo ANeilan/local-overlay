@@ -25,5 +25,5 @@ src_configure()
 src_install()
 {
 	insinto /usr/share/fortune
-	doins 2brokegirls 2brokegirls.dat
+	doins ${S}/quotes/2brokegirls/2brokegirls ${S}/quotes/2brokegirls/2brokegirls.dat
 }
