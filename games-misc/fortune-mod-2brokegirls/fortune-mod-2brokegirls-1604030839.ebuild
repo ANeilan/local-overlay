@@ -19,7 +19,7 @@ S="${WORKDIR}/wikiquote-fortune-collection-5"
 
 src_configure()
 {
-	emake SHOWS=2brokegirls SCRIPTS=
+	emake SHOWS="2brokegirls" SCRIPTS=
 }
 
 src_install()
