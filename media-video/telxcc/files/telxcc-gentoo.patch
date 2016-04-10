@@ -1,0 +1,60 @@
+diff -Naur telxcc-2.5.3.old/Makefile telxcc-2.5.3/Makefile
+--- telxcc-2.5.3.old/Makefile	2016-03-30 15:05:59.499500092 +0200
++++ telxcc-2.5.3/Makefile	2016-03-30 15:08:08.678856928 +0200
+@@ -1,8 +1,7 @@
+ CC = gcc
+-CCFLAGS = -m64 -march=core2 -std=gnu99 -O3 -Wall -pedantic
+ LD = ld
+ LDFLAGS =
+-DEST = /usr/local
++DEST = $(DESTDIR)/usr/
+ 
+ OBJS = telxcc.o
+ EXEC = telxcc
+@@ -12,7 +11,7 @@
+ strip : $(EXEC)
+ 	-strip $<
+ 
+-man : telxcc.1.gz
++man : telxcc.1
+ 
+ .PHONY : clean
+ clean :
+@@ -22,27 +21,28 @@
+ 	$(CC) $(LDFLAGS) -o $@ $(OBJS)
+ 
+ %.o : %.c
+-	$(CC) -c $(CCFLAGS) -o $@ $<
++	$(CC) -c $(CFLAGS) -o $@ $<
+ 
+ %.1.gz : %.1
+ 	gzip -c -9 $< > $@
+ 
+ profiled :
+-	make CCFLAGS="$(CCFLAGS) -fprofile-generate" LDFLAGS="$(LDFLAGS) -fprofile-generate" $(EXEC)
++	make CFLAGS="$(CFLAGS) -fprofile-generate" LDFLAGS="$(LDFLAGS) -fprofile-generate" $(EXEC)
+ 	find . -type f -iname \*.ts -exec sh -c './telxcc -1 -c -v -p 888 < "{}" > /dev/null 2>> profile.log' \;
+ 	find . -type f -iname \*.ts -exec sh -c './telxcc -s -v -p 888 < "{}" > /dev/null 2>> profile.log' \;
+ 	find . -type f -iname \*.ts -exec sh -c './telxcc -1 -v -t 8192 -p 777 < "{}" > /dev/null 2>> profile.log' \;
+ 	find . -type f -iname \*.ts -exec sh -c './telxcc < "{}" > /dev/null 2>> profile.log' \;
+ 	find . -type f -iname \*.m2ts -exec sh -c './telxcc -1 -v -m -c < "{}" > /dev/null 2>> profile.log' \;
+ 	make clean
+-	make CCFLAGS="$(CCFLAGS) -fprofile-use" LDFLAGS="$(LDFLAGS) -fprofile-use" $(EXEC)
++	make CFLAGS="$(CFLAGS) -fprofile-use" LDFLAGS="$(LDFLAGS) -fprofile-use" $(EXEC)
+ 	-rm -f $(OBJS) *.gcda *.gcno *.dyn pgopti.dpi pgopti.dpi.lock
+ 
+-install : strip man
+-	sudo cp telxcc $(DEST)/bin
+-	sudo mkdir -p $(DEST)/share/man/man1
+-	sudo cp telxcc.1.gz $(DEST)/share/man/man1
++install : man
++	mkdir -p $(DEST)/bin
++	cp telxcc $(DEST)/bin
++	mkdir -p $(DEST)/share/man/man1
++	cp telxcc.1 $(DEST)/share/man/man1
+ 
+ uninstall :
+-	sudo rm $(DEST)/bin/telxcc
+-	sudo rm $(DEST)/share/man/man1/telxcc.1.gz
++	rm $(DEST)/bin/telxcc
++	rm $(DEST)/share/man/man1/telxcc.1
