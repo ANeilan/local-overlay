@@ -27,6 +27,6 @@ src_unpack() {
 }
 
 src_install() {
-	exeinto /opt/
+	exeinto /opt/bin
 	newexe ${MY_P} DivX265
 }
