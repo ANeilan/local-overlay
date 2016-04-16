@@ -4,12 +4,12 @@
 
 EAPI="2"
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="BBC Iplayer downloading application"
 HOMEPAGE="http://linuxcentre.net/get_iplayer/"
-SRC_URI="" # ftp://ftp.infradead.org/pub/get_iplayer/${P}.tar.gz"
-EGIT_REPO_URI="git://git.infradead.org/get_iplayer.git"
+EGIT_REPO_URI="https://github.com/get-iplayer/get_iplayer"
+EGIT_BRANCH="develop"
 
 LICENSE="GPL-3"
 SLOT="0"
