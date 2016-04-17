@@ -1,2 +1,4 @@
 # have to figure this out later.....
 =net-dns/dnscrypt-proxy-9999
+# have to figure out crypto++ dependency
+=media-sound/clementine-1.3
