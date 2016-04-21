@@ -17,7 +17,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 RDEPEND="virtual/ffmpeg
-		(media-video/flvstreamer media-video/rtmpdump)
+		( media-video/flvstreamer media-video/rtmpdump )
 		dev-perl/libwww-perl
 		media-video/atomicparsley-wez
 		"
