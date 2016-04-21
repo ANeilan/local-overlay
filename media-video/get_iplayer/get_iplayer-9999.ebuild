@@ -16,10 +16,8 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-RDEPEND="media-video/mplayer
-		virtual/ffmpeg
-		media-sound/lame
-		media-video/flvstreamer
+RDEPEND="virtual/ffmpeg
+		(media-video/flvstreamer media-video/rtmpdump)
 		dev-perl/libwww-perl
 		media-video/atomicparsley-wez
 		"
