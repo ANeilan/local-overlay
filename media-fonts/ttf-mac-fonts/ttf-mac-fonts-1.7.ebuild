@@ -5,6 +5,7 @@
 EAPI=5
 inherit subversion
 
+DEPENDS="dev-vcs/subversion"
 ESVN_REPO_URI="https://svn.code.sf.net/p/macbuntu/code/Macbuntu/fonts/"
 SLOT=0
 KEYWORDS="~amd64"
