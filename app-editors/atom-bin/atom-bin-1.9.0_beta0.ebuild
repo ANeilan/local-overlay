@@ -40,13 +40,13 @@ RDEPEND="${DEPEND}
 	x11-libs/pango"
 
 QA_PRESTRIPPED="
-	/usr/share/atom/atom
-	/usr/share/atom/chromedriver/chromedriver
-	/usr/share/atom/libffmpegsumo.so
-	/usr/share/atom/libnotify.so.4
-	/usr/share/atom/libchromiumcontent.so
-	/usr/share/atom/libgcrypt.so.11
-	/usr/share/atom/resources/app.asar.unpacked/node_modules/symbols-view/vendor/ctags-linux"
+	/usr/share/atom-beta/atom
+	/usr/share/atom-beta/chromedriver/chromedriver
+	/usr/share/atom-beta/libffmpegsumo.so
+	/usr/share/atom-beta/libnotify.so.4
+	/usr/share/atom-beta/libchromiumcontent.so
+	/usr/share/atom-beta/libgcrypt.so.11
+	/usr/share/atom-beta/resources/app.asar.unpacked/node_modules/symbols-view/vendor/ctags-linux"
 
 pkg_setup() {
 	python-any-r1_pkg_setup
@@ -63,21 +63,21 @@ src_prepare() {
 }
 
 src_install() {
-	pax-mark m usr/bin/atom
+	pax-mark m usr/bin/atom-beta
 	into /
 	insinto /
 	doins -r .
 
 	# Fixes permissions
-	fperms +x /usr/bin/atom
-	fperms +x /usr/share/atom/${MY_PN}
-	fperms +x /usr/share/atom/resources/app/atom.sh
-	fperms +x /usr/share/atom/resources/app/apm/bin/apm
-	fperms +x /usr/share/atom/resources/app/apm/bin/node
-	fperms +x /usr/share/atom/resources/app/apm/node_modules/npm/bin/node-gyp-bin/node-gyp
-	fperms +x /usr/share/atom/resources/app.asar.unpacked/node_modules/symbols-view/vendor/ctags-linux
+	fperms +x /usr/bin/atom-beta
+	fperms +x /usr/share/atom-beta/${MY_PN}
+	fperms +x /usr/share/atom-beta/resources/app/atom.sh
+	fperms +x /usr/share/atom-beta/resources/app/apm/bin/apm
+	fperms +x /usr/share/atom-beta/resources/app/apm/bin/node
+	fperms +x /usr/share/atom-beta/resources/app/apm/node_modules/npm/bin/node-gyp-bin/node-gyp
+	fperms +x /usr/share/atom-beta/resources/app.asar.unpacked/node_modules/symbols-view/vendor/ctags-linux
 
-	make_desktop_entry "/usr/bin/atom %U" "Atom" "atom" \
+	make_desktop_entry "/usr/bin/atom-beta %U" "Atom" "atom" \
 		"GNOME;GTK;Utility;TextEditor;Development;" \
 		"GenericName=Text Editor\nMimeType=text/plain;\nStartupNotify=true\nStartupWMClass=Atom"
 }
